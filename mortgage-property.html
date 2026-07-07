@@ -88,6 +88,101 @@
 
 <section class="section-alt">
   <div class="wrap">
+    <p class="section-kicker">Mortgage Estimate</p>
+    <h2 class="section-title">Change the deposit and see the monthly idea</h2>
+    <p class="section-intro">Use this as a planning tool before we speak to the bank. The example rates are based on Santander Spain mortgage information checked on 7 July 2026, but every rate, deposit, term, and price can be changed.</p>
+
+    <div class="mortgage-calculator" data-mortgage-calculator>
+      <div class="calculator-panel">
+        <div class="field">
+          <label for="property-price">Property price</label>
+          <div class="input-wrap">
+            <span>€</span>
+            <input id="property-price" type="number" min="50000" step="5000" value="250000" data-calc="price">
+          </div>
+        </div>
+
+        <div class="field">
+          <label for="deposit-percent">Deposit</label>
+          <div class="range-row">
+            <input id="deposit-percent" type="range" min="20" max="50" step="1" value="35" data-calc="deposit">
+            <output data-calc-output="depositLabel">35%</output>
+          </div>
+        </div>
+
+        <div class="field">
+          <label for="mortgage-years">Mortgage term</label>
+          <div class="input-wrap">
+            <input id="mortgage-years" type="number" min="5" max="30" step="1" value="25" data-calc="years">
+            <span>years</span>
+          </div>
+        </div>
+
+        <div class="field">
+          <label for="rate-preset">Example rate</label>
+          <select id="rate-preset" data-calc="preset">
+            <option value="fixed-bonified">Santander-style fixed with conditions</option>
+            <option value="fixed-standard">Santander-style fixed without conditions</option>
+            <option value="variable-bonified">Santander-style variable with conditions</option>
+            <option value="variable-standard">Santander-style variable without conditions</option>
+            <option value="custom">Custom rate</option>
+          </select>
+        </div>
+
+        <div class="calc-grid">
+          <div class="field">
+            <label for="fixed-rate">Fixed rate</label>
+            <div class="input-wrap">
+              <input id="fixed-rate" type="number" min="0" max="15" step="0.01" value="2.96" data-calc="fixedRate">
+              <span>%</span>
+            </div>
+          </div>
+
+          <div class="field">
+            <label for="euribor-rate">Euribor</label>
+            <div class="input-wrap">
+              <input id="euribor-rate" type="number" min="0" max="15" step="0.01" value="2.798" data-calc="euribor">
+              <span>%</span>
+            </div>
+          </div>
+
+          <div class="field">
+            <label for="bank-margin">Bank margin</label>
+            <div class="input-wrap">
+              <input id="bank-margin" type="number" min="0" max="10" step="0.01" value="0.84" data-calc="margin">
+              <span>%</span>
+            </div>
+          </div>
+
+          <div class="field">
+            <label for="buying-costs">Buying costs estimate</label>
+            <div class="input-wrap">
+              <input id="buying-costs" type="number" min="0" max="20" step="0.5" value="10" data-calc="costs">
+              <span>%</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="calculator-results" aria-live="polite">
+        <div>
+          <span class="result-label">Estimated monthly payment</span>
+          <strong data-calc-output="monthly">€0</strong>
+          <small data-calc-output="rateNote">Using 2.96% fixed rate</small>
+        </div>
+        <div class="result-row"><span>Deposit amount</span><strong data-calc-output="depositAmount">€0</strong></div>
+        <div class="result-row"><span>Mortgage amount</span><strong data-calc-output="loanAmount">€0</strong></div>
+        <div class="result-row"><span>Loan to value</span><strong data-calc-output="ltv">0%</strong></div>
+        <div class="result-row"><span>Cash needed including buying costs</span><strong data-calc-output="cashNeeded">€0</strong></div>
+        <div class="result-row"><span>Total interest over term</span><strong data-calc-output="interest">€0</strong></div>
+        <p class="calc-note" data-calc-output="warning">This is an estimate only. We help check what deposit, bank, rate type, and conditions are realistic before you commit to the property.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section-alt">
+  <div class="wrap">
     <div class="callout">
       <span class="label">The risk we check before you sign</span>
       <p><strong>The real risk isn't the mortgage — it's the contract with the seller's agency.</strong> When you agree a price and sign with an agency, the contract terms determine what happens if the bank's official valuation later comes in below that price.</p>

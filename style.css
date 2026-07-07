@@ -234,6 +234,14 @@ section { padding: 72px 0; }
   transition: transform .18s, box-shadow .18s;
 }
 .topic-card:hover { transform: translateY(-3px); box-shadow: 0 16px 32px rgba(7,37,48,0.25); }
+.topic-card-image {
+  width: 100%;
+  aspect-ratio: 3 / 2;
+  object-fit: cover;
+  border-radius: 10px;
+  border: 1px solid rgba(255,255,255,0.18);
+  margin: -8px 0 2px;
+}
 .topic-card .stage { font-size: 12px; font-weight: 700; color: var(--sun-soft); letter-spacing: 0.06em; text-transform: uppercase; }
 .topic-card h3 { font-size: 21px; margin: 0; font-weight: 700; letter-spacing: -0.01em; }
 .topic-card p { margin: 0; color: rgba(255,255,255,0.75); font-size: 14.5px; }

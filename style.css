@@ -263,6 +263,140 @@ section { padding: 72px 0; }
 .callout p { margin: 0 0 10px; color: var(--ink); font-size: 15.5px; }
 .callout p:last-child { margin-bottom: 0; }
 
+/* ---------- Mortgage calculator ---------- */
+.mortgage-calculator {
+  display: grid;
+  grid-template-columns: minmax(0, 1.15fr) minmax(280px, 0.85fr);
+  gap: 22px;
+  align-items: stretch;
+}
+.calculator-panel,
+.calculator-results {
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 28px;
+}
+.calculator-panel {
+  display: grid;
+  gap: 18px;
+}
+.calc-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+}
+.field {
+  display: grid;
+  gap: 8px;
+}
+.field label {
+  color: var(--ink);
+  font-size: 13px;
+  font-weight: 700;
+}
+.input-wrap,
+.field select {
+  width: 100%;
+  min-height: 46px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: var(--white);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 0 14px;
+  color: var(--ink);
+}
+.field input,
+.field select {
+  font: inherit;
+  color: var(--ink);
+}
+.input-wrap input {
+  width: 100%;
+  border: 0;
+  outline: 0;
+  background: transparent;
+  min-width: 0;
+}
+.field select {
+  appearance: none;
+  cursor: pointer;
+}
+.input-wrap span {
+  color: var(--ink-soft);
+  font-size: 14px;
+  font-weight: 600;
+}
+.range-row {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 58px;
+  gap: 14px;
+  align-items: center;
+}
+.range-row input { width: 100%; accent-color: var(--sun); }
+.range-row output {
+  background: var(--sun-pale);
+  border-radius: 999px;
+  color: var(--ocean);
+  font-size: 13px;
+  font-weight: 800;
+  padding: 6px 8px;
+  text-align: center;
+}
+.calculator-results {
+  background: var(--ocean);
+  color: var(--white);
+  display: grid;
+  gap: 14px;
+}
+.calculator-results .result-label {
+  display: block;
+  color: var(--sun-soft);
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  margin-bottom: 5px;
+}
+.calculator-results > div:first-child strong {
+  display: block;
+  font-size: clamp(32px, 4vw, 48px);
+  letter-spacing: -0.02em;
+  line-height: 1;
+}
+.calculator-results small {
+  display: block;
+  color: rgba(255,255,255,0.72);
+  font-size: 13px;
+  margin-top: 8px;
+}
+.result-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  border-top: 1px solid rgba(255,255,255,0.14);
+  padding-top: 12px;
+  font-size: 14px;
+}
+.result-row span { color: rgba(255,255,255,0.72); }
+.result-row strong {
+  color: var(--white);
+  text-align: right;
+}
+.calc-note {
+  margin: 0;
+  color: rgba(255,255,255,0.72);
+  font-size: 13px;
+}
+@media (max-width: 900px) {
+  .mortgage-calculator,
+  .calc-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
 /* ---------- Lists / lessons ---------- */
 .lesson {
   display: flex;

@@ -102,17 +102,26 @@ document.addEventListener('DOMContentLoaded', function () {
     var depositPercent = value('deposit');
     var years = value('years');
     var costsPercent = value('costs');
+    var shortfallPercent = value('shortfall');
     var presetName = input('preset').value;
     var preset = presets[presetName] || { mode: 'fixed' };
+    var residency = input('residency') ? input('residency').value : 'non-resident';
     var isVariable = preset.mode === 'variable';
     var annualRate = isVariable ? value('euribor') + value('margin') : value('fixedRate');
     var depositAmount = price * depositPercent / 100;
     var buyingCosts = price * costsPercent / 100;
+    var otherFeesLow = price * 0.01;
+    var otherFeesHigh = price * 0.02;
     var loanAmount = Math.max(price - depositAmount, 0);
     var monthly = monthlyPayment(loanAmount, annualRate, years);
     var totalPaid = monthly * years * 12;
     var totalInterest = Math.max(totalPaid - loanAmount, 0);
     var ltv = price ? loanAmount / price * 100 : 0;
+    var valuation = price * Math.max(100 - shortfallPercent, 0) / 100;
+    var maxLoanOnLowerValuation = valuation * ltv / 100;
+    var shortfallCash = Math.max(loanAmount - maxLoanOnLowerValuation, 0);
+    var typicalLimit = residency === 'resident' ? 80 : 70;
+    var typicalRange = residency === 'resident' ? '70-80%' : '60-70%';
 
     output('depositLabel').textContent = depositPercent.toFixed(0) + '%';
     output('monthly').textContent = money(monthly);
@@ -122,11 +131,16 @@ document.addEventListener('DOMContentLoaded', function () {
     output('depositAmount').textContent = money(depositAmount);
     output('loanAmount').textContent = money(loanAmount);
     output('ltv').textContent = ltv.toFixed(0) + '%';
+    output('costLabel').textContent = costsPercent.toFixed(1).replace('.0', '') + '% tax and cost allowance';
+    output('buyingCosts').textContent = money(buyingCosts);
+    output('otherFees').textContent = money(otherFeesLow) + '-' + money(otherFeesHigh);
     output('cashNeeded').textContent = money(depositAmount + buyingCosts);
+    output('shortfallLabel').textContent = 'If valuation is ' + shortfallPercent.toFixed(0) + '% lower';
+    output('shortfallCash').textContent = money(shortfallCash) + ' extra';
     output('interest').textContent = money(totalInterest);
-    output('warning').textContent = ltv > 70
-      ? 'This is above the 60-70% range many non-resident buyers should plan around. We help check the lender, deposit, valuation, and contract risk before you commit.'
-      : 'This is an estimate only. We help check what deposit, bank, rate type, and conditions are realistic before you commit to the property.';
+    output('warning').textContent = ltv > typicalLimit
+      ? 'This is above the ' + typicalRange + ' range many ' + residency.replace('-', ' ') + ' buyers should plan around. We help check the lender, deposit, valuation, and contract risk before you commit.'
+      : 'This is an estimate only. We help check what deposit, bank, rate type, valuation, taxes, and conditions are realistic before you commit to the property.';
   }
 
   calculator.querySelectorAll('input, select').forEach(function (field) {

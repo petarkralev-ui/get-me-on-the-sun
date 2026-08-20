@@ -1,0 +1,61 @@
+name: Rental law status source check
+
+on:
+  schedule:
+    - cron: "20 8 * * 1"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  check-official-sources:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Check official source availability
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          import json
+          import pathlib
+          import urllib.request
+          from datetime import date
+
+          path = pathlib.Path("rental-law-status.json")
+          data = json.loads(path.read_text())
+          sources = data.get("sources", [])
+          available = []
+
+          for source in sources:
+            url = source.get("url")
+            try:
+              request = urllib.request.Request(url, headers={"User-Agent": "GetMeOnTheSun legal-status-check"})
+              with urllib.request.urlopen(request, timeout=20) as response:
+                available.append(response.status < 400)
+            except Exception:
+              available.append(False)
+
+          data["lastChecked"] = date.today().isoformat()
+          if not all(available):
+            data["statusLabel"] = "Manual review needed"
+            data["summary"] = "The official source check could not confirm all source pages today. We manually review the rental route before any property is marketed."
+          else:
+            data["statusLabel"] = "Check before marketing"
+            data["summary"] = "The rules can change, so we check the current official position before advising whether the property should be used for tourist rental, longer rental, or private family use between owner visits."
+
+          path.write_text(json.dumps(data, indent=2) + "\n")
+          PY
+
+      - name: Commit updated check date
+        run: |
+          if git diff --quiet rental-law-status.json; then
+            echo "No rental law status update needed."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add rental-law-status.json
+          git commit -m "Update rental law status check date"
+          git push

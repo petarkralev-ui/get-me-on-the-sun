@@ -91,7 +91,7 @@
   <div class="wrap">
     <p class="section-kicker">Mortgage Estimate</p>
     <h2 class="section-title">See the mortgage, deposit, taxes, and cash needed</h2>
-    <p class="section-intro">Use this as a planning tool before we speak to the bank. It shows the mortgage amount, deposit, an editable 8% planning allowance for purchase taxes and core costs, typical extra fees, and what happens if the bank valuation comes in lower than the agreed price.</p>
+    <p class="section-intro">Use this as a planning tool before we speak to the bank. It shows the mortgage amount, deposit, the 6.5% Tenerife resale transfer-tax baseline, typical extra fees, and what happens if the bank valuation comes in lower than the agreed price.</p>
 
     <div class="mortgage-calculator" data-mortgage-calculator>
       <div class="calculator-panel">
@@ -164,9 +164,9 @@
           </div>
 
           <div class="field">
-            <label for="buying-costs">Tax and cost planning allowance</label>
+            <label for="buying-costs">Resale transfer tax baseline</label>
             <div class="input-wrap">
-              <input id="buying-costs" type="number" min="0" max="20" step="0.5" value="8" data-calc="costs">
+              <input id="buying-costs" type="number" min="0" max="20" step="0.5" value="6.5" data-calc="costs">
               <span>%</span>
             </div>
           </div>
@@ -190,7 +190,7 @@
         <div class="result-row"><span>Deposit amount</span><strong data-calc-output="depositAmount">€0</strong></div>
         <div class="result-row"><span>Mortgage amount</span><strong data-calc-output="loanAmount">€0</strong></div>
         <div class="result-row"><span>Loan to value</span><strong data-calc-output="ltv">0%</strong></div>
-        <div class="result-row"><span data-calc-output="costLabel">8% tax and cost allowance</span><strong data-calc-output="buyingCosts">€0</strong></div>
+        <div class="result-row"><span data-calc-output="costLabel">6.5% resale transfer tax baseline</span><strong data-calc-output="buyingCosts">€0</strong></div>
         <div class="result-row"><span>Other fee guide, often around 1-2%</span><strong data-calc-output="otherFees">€0-€0</strong></div>
         <div class="result-row"><span>Total funds needed before other fees</span><strong data-calc-output="cashNeeded">€0</strong></div>
         <div class="result-row"><span data-calc-output="shortfallLabel">If valuation is 10% lower</span><strong data-calc-output="shortfallCash">€0 extra</strong></div>
@@ -199,7 +199,7 @@
       </div>
     </div>
 
-    <p class="small-print">Planning note: for Tenerife, the general transfer tax on resale property is commonly 6.5%, while new-build purchases are treated differently and may involve IGIC and other taxes. We use an editable 8% planning allowance here so buyers can see the cash impact early. Final taxes, notary, registry, bank, agency, and legal costs must be confirmed during the purchase process.</p>
+    <p class="small-print">Planning note: for Tenerife, the general transfer tax on resale property is commonly 6.5%. New-build purchases are treated differently and may involve IGIC and other taxes. Final taxes, notary, registry, bank, agency, and legal costs must be confirmed during the purchase process.</p>
   </div>
 </section>
 
@@ -213,12 +213,12 @@
       <div class="card">
         <div class="card-num">Example A</div>
         <h3>€300,000 purchase, 60% mortgage</h3>
-        <p>Mortgage about €180,000. Deposit about €120,000. 8% planning allowance about €24,000. Total funds needed before other fees: about €144,000.</p>
+        <p>Mortgage about €180,000. Deposit about €120,000. 6.5% resale transfer tax about €19,500. Total funds needed before other fees: about €139,500.</p>
       </div>
       <div class="card">
         <div class="card-num">Example B</div>
         <h3>€500,000 purchase, 65% mortgage</h3>
-        <p>Mortgage about €325,000. Deposit about €175,000. 8% planning allowance about €40,000. Total funds needed before other fees: about €215,000.</p>
+        <p>Mortgage about €325,000. Deposit about €175,000. 6.5% resale transfer tax about €32,500. Total funds needed before other fees: about €207,500.</p>
       </div>
       <div class="card">
         <div class="card-num">Valuation Risk</div>

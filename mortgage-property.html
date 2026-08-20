@@ -90,8 +90,8 @@
 <section class="section-alt">
   <div class="wrap">
     <p class="section-kicker">Mortgage Estimate</p>
-    <h2 class="section-title">Change the deposit and see the monthly idea</h2>
-    <p class="section-intro">Use this as a planning tool before we speak to the bank. The example rates are based on Santander Spain mortgage information checked on 7 July 2026, but every rate, deposit, term, and price can be changed.</p>
+    <h2 class="section-title">See the mortgage, deposit, taxes, and cash needed</h2>
+    <p class="section-intro">Use this as a planning tool before we speak to the bank. It shows the mortgage amount, deposit, an editable 8% planning allowance for purchase taxes and core costs, typical extra fees, and what happens if the bank valuation comes in lower than the agreed price.</p>
 
     <div class="mortgage-calculator" data-mortgage-calculator>
       <div class="calculator-panel">
@@ -101,6 +101,14 @@
             <span>€</span>
             <input id="property-price" type="number" min="50000" step="5000" value="250000" data-calc="price">
           </div>
+        </div>
+
+        <div class="field">
+          <label for="buyer-status">Buyer status</label>
+          <select id="buyer-status" data-calc="residency">
+            <option value="non-resident">Non-resident buyer</option>
+            <option value="resident">Resident buyer</option>
+          </select>
         </div>
 
         <div class="field">
@@ -156,10 +164,18 @@
           </div>
 
           <div class="field">
-            <label for="buying-costs">Buying costs estimate</label>
+            <label for="buying-costs">Tax and cost planning allowance</label>
             <div class="input-wrap">
-              <input id="buying-costs" type="number" min="0" max="20" step="0.5" value="10" data-calc="costs">
+              <input id="buying-costs" type="number" min="0" max="20" step="0.5" value="8" data-calc="costs">
               <span>%</span>
+            </div>
+          </div>
+
+          <div class="field">
+            <label for="valuation-shortfall">Valuation shortfall scenario</label>
+            <div class="input-wrap">
+              <input id="valuation-shortfall" type="number" min="0" max="30" step="1" value="10" data-calc="shortfall">
+              <span>% lower</span>
             </div>
           </div>
         </div>
@@ -174,13 +190,47 @@
         <div class="result-row"><span>Deposit amount</span><strong data-calc-output="depositAmount">€0</strong></div>
         <div class="result-row"><span>Mortgage amount</span><strong data-calc-output="loanAmount">€0</strong></div>
         <div class="result-row"><span>Loan to value</span><strong data-calc-output="ltv">0%</strong></div>
-        <div class="result-row"><span>Cash needed including buying costs</span><strong data-calc-output="cashNeeded">€0</strong></div>
+        <div class="result-row"><span data-calc-output="costLabel">8% tax and cost allowance</span><strong data-calc-output="buyingCosts">€0</strong></div>
+        <div class="result-row"><span>Other fee guide, often around 1-2%</span><strong data-calc-output="otherFees">€0-€0</strong></div>
+        <div class="result-row"><span>Total funds needed before other fees</span><strong data-calc-output="cashNeeded">€0</strong></div>
+        <div class="result-row"><span data-calc-output="shortfallLabel">If valuation is 10% lower</span><strong data-calc-output="shortfallCash">€0 extra</strong></div>
         <div class="result-row"><span>Total interest over term</span><strong data-calc-output="interest">€0</strong></div>
         <p class="calc-note" data-calc-output="warning">This is an estimate only. We help check what deposit, bank, rate type, and conditions are realistic before you commit to the property.</p>
       </div>
     </div>
 
-    <p class="small-print">Small print: this calculator is for estimation only and does not guarantee that the final bank figures will be exactly the same. It is designed to give you a good idea of the possible monthly cost before we check the real lender terms, deposit level, valuation, and approval conditions.</p>
+    <p class="small-print">Planning note: for Tenerife, the general transfer tax on resale property is commonly 6.5%, while new-build purchases are treated differently and may involve IGIC and other taxes. We use an editable 8% planning allowance here so buyers can see the cash impact early. Final taxes, notary, registry, bank, agency, and legal costs must be confirmed during the purchase process.</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <p class="section-kicker">Funds Required</p>
+    <h2 class="section-title">Three simple examples</h2>
+    <p class="section-intro">These examples show why the deposit is not the only cash you need. The bank normally lends against its valuation, and purchase taxes and costs must be available on top.</p>
+
+    <div class="grid grid-2">
+      <div class="card">
+        <div class="card-num">Example A</div>
+        <h3>€300,000 purchase, 60% mortgage</h3>
+        <p>Mortgage about €180,000. Deposit about €120,000. 8% planning allowance about €24,000. Total funds needed before other fees: about €144,000.</p>
+      </div>
+      <div class="card">
+        <div class="card-num">Example B</div>
+        <h3>€500,000 purchase, 65% mortgage</h3>
+        <p>Mortgage about €325,000. Deposit about €175,000. 8% planning allowance about €40,000. Total funds needed before other fees: about €215,000.</p>
+      </div>
+      <div class="card">
+        <div class="card-num">Valuation Risk</div>
+        <h3>If the bank values lower</h3>
+        <p>If a €300,000 property is valued 10% lower, the bank may lend against €270,000 instead of the agreed price. At 60% lending, that can create an extra cash gap of about €18,000.</p>
+      </div>
+      <div class="card">
+        <div class="card-num">Our Role</div>
+        <h3>We check this before you commit</h3>
+        <p>We help you understand the budget, valuation risk, deposit level, taxes, and contract protections before you put serious money into the deal. Figures are indicative; banks and authorities confirm final amounts.</p>
+      </div>
+    </div>
   </div>
 </section>
 

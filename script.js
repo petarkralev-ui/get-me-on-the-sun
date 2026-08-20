@@ -131,7 +131,7 @@ document.addEventListener('DOMContentLoaded', function () {
     output('depositAmount').textContent = money(depositAmount);
     output('loanAmount').textContent = money(loanAmount);
     output('ltv').textContent = ltv.toFixed(0) + '%';
-    output('costLabel').textContent = costsPercent.toFixed(1).replace('.0', '') + '% tax and cost allowance';
+    output('costLabel').textContent = costsPercent.toFixed(1).replace('.0', '') + '% resale transfer tax baseline';
     output('buyingCosts').textContent = money(buyingCosts);
     output('otherFees').textContent = money(otherFeesLow) + '-' + money(otherFeesHigh);
     output('cashNeeded').textContent = money(depositAmount + buyingCosts);

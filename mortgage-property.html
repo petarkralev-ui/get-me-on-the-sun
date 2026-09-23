@@ -90,116 +90,33 @@
 <section class="section-alt">
   <div class="wrap">
     <p class="section-kicker">Mortgage Estimate</p>
-    <h2 class="section-title">See the mortgage, deposit, taxes, and cash needed</h2>
-    <p class="section-intro">Use this as a planning tool before we speak to the bank. It shows the mortgage amount, deposit, the 6.5% Tenerife resale transfer-tax baseline, typical extra fees, and what happens if the bank valuation comes in lower than the agreed price.</p>
+    <h2 class="section-title">Start with Bankinter's official mortgage simulator</h2>
+    <p class="section-intro">Use Bankinter's online simulator for an initial mortgage estimate. When you are ready to move forward, we help organise the application, check the requested documents, and coordinate the file with the mortgage specialist.</p>
 
-    <div class="mortgage-calculator" data-mortgage-calculator>
+    <div class="mortgage-calculator">
       <div class="calculator-panel">
-        <div class="field">
-          <label for="property-price">Property price</label>
-          <div class="input-wrap">
-            <span>€</span>
-            <input id="property-price" type="number" min="50000" step="5000" value="250000" data-calc="price">
-          </div>
-        </div>
-
-        <div class="field">
-          <label for="buyer-status">Buyer status</label>
-          <select id="buyer-status" data-calc="residency">
-            <option value="non-resident">Non-resident buyer</option>
-            <option value="resident">Resident buyer</option>
-          </select>
-        </div>
-
-        <div class="field">
-          <label for="deposit-percent">Deposit</label>
-          <div class="range-row">
-            <input id="deposit-percent" type="range" min="20" max="50" step="1" value="35" data-calc="deposit">
-            <output data-calc-output="depositLabel">35%</output>
-          </div>
-        </div>
-
-        <div class="field">
-          <label for="mortgage-years">Mortgage term</label>
-          <div class="input-wrap">
-            <input id="mortgage-years" type="number" min="5" max="30" step="1" value="25" data-calc="years">
-            <span>years</span>
-          </div>
-        </div>
-
-        <div class="field">
-          <label for="rate-preset">Example rate</label>
-          <select id="rate-preset" data-calc="preset">
-            <option value="fixed-bonified">Santander-style fixed with conditions</option>
-            <option value="fixed-standard">Santander-style fixed without conditions</option>
-            <option value="variable-bonified">Santander-style variable with conditions</option>
-            <option value="variable-standard">Santander-style variable without conditions</option>
-            <option value="custom">Custom rate</option>
-          </select>
-        </div>
-
-        <div class="calc-grid">
-          <div class="field">
-            <label for="fixed-rate">Fixed rate</label>
-            <div class="input-wrap">
-              <input id="fixed-rate" type="number" min="0" max="15" step="0.01" value="2.96" data-calc="fixedRate">
-              <span>%</span>
-            </div>
-          </div>
-
-          <div class="field">
-            <label for="euribor-rate">Euribor</label>
-            <div class="input-wrap">
-              <input id="euribor-rate" type="number" min="0" max="15" step="0.01" value="2.798" data-calc="euribor">
-              <span>%</span>
-            </div>
-          </div>
-
-          <div class="field">
-            <label for="bank-margin">Bank margin</label>
-            <div class="input-wrap">
-              <input id="bank-margin" type="number" min="0" max="10" step="0.01" value="0.84" data-calc="margin">
-              <span>%</span>
-            </div>
-          </div>
-
-          <div class="field">
-            <label for="buying-costs">Resale transfer tax baseline</label>
-            <div class="input-wrap">
-              <input id="buying-costs" type="number" min="0" max="20" step="0.5" value="6.5" data-calc="costs">
-              <span>%</span>
-            </div>
-          </div>
-
-          <div class="field">
-            <label for="valuation-shortfall">Valuation shortfall scenario</label>
-            <div class="input-wrap">
-              <input id="valuation-shortfall" type="number" min="0" max="30" step="1" value="10" data-calc="shortfall">
-              <span>% lower</span>
-            </div>
-          </div>
+        <span class="status-label">Official Bankinter tool</span>
+        <h3>Get an initial estimate in about one minute</h3>
+        <p>Enter your purchase and financing details directly into Bankinter's mortgage simulator to explore an estimated monthly payment and associated mortgage costs. The simulation is without commitment and does not constitute mortgage approval.</p>
+        <div>
+          <a class="btn btn-primary" href="https://www.bankinter.com/banca/hipotecas-prestamos/hipotecas/simular-hipoteca-online?tipoHipoteca=generico" target="_blank" rel="noopener noreferrer">Open Bankinter simulator →</a>
         </div>
       </div>
 
-      <div class="calculator-results" aria-live="polite">
+      <div class="calculator-results">
         <div>
-          <span class="result-label">Estimated monthly payment</span>
-          <strong data-calc-output="monthly">€0</strong>
-          <small data-calc-output="rateNote">Using 2.96% fixed rate</small>
+          <span class="result-label">Our all-in-one support</span>
+          <strong>From documents to bank review</strong>
+          <small>We keep the application moving and help prevent avoidable delays.</small>
         </div>
-        <div class="result-row"><span>Deposit amount</span><strong data-calc-output="depositAmount">€0</strong></div>
-        <div class="result-row"><span>Mortgage amount</span><strong data-calc-output="loanAmount">€0</strong></div>
-        <div class="result-row"><span>Loan to value</span><strong data-calc-output="ltv">0%</strong></div>
-        <div class="result-row"><span data-calc-output="costLabel">6.5% resale transfer tax baseline</span><strong data-calc-output="buyingCosts">€0</strong></div>
-        <div class="result-row"><span>Other fee guide, often around 1-2%</span><strong data-calc-output="otherFees">€0-€0</strong></div>
-        <div class="result-row"><span>Total funds needed before other fees</span><strong data-calc-output="cashNeeded">€0</strong></div>
-        <div class="result-row"><span data-calc-output="shortfallLabel">If valuation is 10% lower</span><strong data-calc-output="shortfallCash">€0 extra</strong></div>
-        <div class="result-row"><span>Total interest over term</span><strong data-calc-output="interest">€0</strong></div>
-        <p class="calc-note" data-calc-output="warning">This is an estimate only. We help check what deposit, bank, rate type, and conditions are realistic before you commit to the property.</p>
+        <div class="result-row"><span>1. Prepare</span><strong>We confirm the documents required for your circumstances.</strong></div>
+        <div class="result-row"><span>2. Check</span><strong>We help make sure the application is completed and signed on every required page.</strong></div>
+        <div class="result-row"><span>3. Coordinate</span><strong>We organise the complete file for review by the mortgage specialist.</strong></div>
+        <p class="calc-note">Once the completed application and all requested documents have been received, an initial response may often take around one week. Timing, lending terms, valuation, and final approval remain subject to Bankinter's assessment.</p>
       </div>
     </div>
 
-    <p class="small-print">Planning note: for Tenerife, the general transfer tax on resale property is commonly 6.5%. New-build purchases are treated differently and may involve IGIC and other taxes. Final taxes, notary, registry, bank, agency, and legal costs must be confirmed during the purchase process.</p>
+    <p class="small-print">The Bankinter simulator opens on Bankinter's website. Its results are indicative and do not guarantee lending or approval. For Tenerife purchases, the general transfer tax on resale property is commonly 6.5%. New-build purchases are treated differently and may involve IGIC and other taxes. Final taxes, notary, registry, bank, agency, and legal costs must be confirmed during the purchase process.</p>
   </div>
 </section>
 
@@ -268,6 +185,6 @@
   </div>
 </footer>
 
-<script src="script.js?v=20260820-65tax"></script>
+<script src="script.js?v=20260923-bankinter"></script>
 </body>
 </html>

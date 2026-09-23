@@ -67,6 +67,7 @@ img { max-width: 100%; display: block; }
   align-items: center;
   gap: 8px;
   margin-right: auto;
+  order: 1;
 }
 .nav-brand .dot {
   width: 8px; height: 8px; border-radius: 50%;
@@ -79,11 +80,12 @@ img { max-width: 100%; display: block; }
   font-size: 13px;
   font-weight: 500;
   color: var(--ink-soft);
+  order: 2;
 }
 .nav-links a { padding: 6px 0; border-bottom: 2px solid transparent; transition: color .15s, border-color .15s; }
 .nav-links a:hover, .nav-links a.active { color: var(--ink); border-color: var(--sun); }
-.nav-toggle { display: none; background: none; border: 0; font-size: 20px; cursor: pointer; }
-.language-switcher { position: relative; margin-left: 20px; }
+.nav-toggle { display: none; background: none; border: 0; font-size: 20px; cursor: pointer; order: 4; }
+.language-switcher { position: relative; margin-left: 28px; order: 3; }
 .language-button {
   min-width: 66px;
   height: 34px;
@@ -145,7 +147,8 @@ img { max-width: 100%; display: block; }
   }
   .nav-links.open { display: flex; }
   .nav-links a { padding: 12px 0; border-bottom: 1px solid var(--line); }
-  .language-switcher { margin-left: 10px; }
+  .language-switcher { margin-left: 10px; order: 2; }
+  .nav-links { order: 4; }
   .nav-toggle { display: block; margin-left: 8px; }
 }
 

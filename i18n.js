@@ -141,7 +141,7 @@
 
     wrapper.appendChild(button);
     wrapper.appendChild(menu);
-    nav.insertBefore(wrapper, toggle);
+    nav.appendChild(wrapper);
   }
 
   document.addEventListener('DOMContentLoaded', function () {

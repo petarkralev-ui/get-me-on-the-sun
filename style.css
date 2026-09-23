@@ -66,6 +66,7 @@ img { max-width: 100%; display: block; }
   display: flex;
   align-items: center;
   gap: 8px;
+  margin-right: auto;
 }
 .nav-brand .dot {
   width: 8px; height: 8px; border-radius: 50%;
@@ -82,6 +83,56 @@ img { max-width: 100%; display: block; }
 .nav-links a { padding: 6px 0; border-bottom: 2px solid transparent; transition: color .15s, border-color .15s; }
 .nav-links a:hover, .nav-links a.active { color: var(--ink); border-color: var(--sun); }
 .nav-toggle { display: none; background: none; border: 0; font-size: 20px; cursor: pointer; }
+.language-switcher { position: relative; margin-left: 20px; }
+.language-button {
+  min-width: 66px;
+  height: 34px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 0 9px;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  background: var(--white);
+  color: var(--ink);
+  font: inherit;
+  font-size: 12px;
+  font-weight: 700;
+  cursor: pointer;
+}
+.language-flag { font-size: 16px; line-height: 1; }
+.language-chevron { color: var(--ink-soft); transform: translateY(-1px); }
+.language-menu {
+  position: absolute;
+  top: calc(100% + 8px);
+  right: 0;
+  z-index: 80;
+  width: 164px;
+  display: none;
+  padding: 6px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--white);
+  box-shadow: 0 12px 30px rgba(20, 30, 38, 0.14);
+}
+.language-switcher.open .language-menu { display: block; }
+.language-option {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  padding: 9px 10px;
+  border: 0;
+  border-radius: 5px;
+  background: transparent;
+  color: var(--ink);
+  font: inherit;
+  font-size: 13px;
+  text-align: left;
+  cursor: pointer;
+}
+.language-option:hover, .language-option.active { background: var(--sun-pale); }
 
 @media (max-width: 780px) {
   .nav-links {
@@ -94,7 +145,8 @@ img { max-width: 100%; display: block; }
   }
   .nav-links.open { display: flex; }
   .nav-links a { padding: 12px 0; border-bottom: 1px solid var(--line); }
-  .nav-toggle { display: block; }
+  .language-switcher { margin-left: 10px; }
+  .nav-toggle { display: block; margin-left: 8px; }
 }
 
 /* ---------- Hero ---------- */

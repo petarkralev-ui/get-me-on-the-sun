@@ -281,6 +281,16 @@ section { padding: 72px 0; }
   display: grid;
   gap: 18px;
 }
+.calculator-panel h3 {
+  margin: 0;
+  font-size: clamp(23px, 2.6vw, 32px);
+  line-height: 1.15;
+}
+.calculator-panel p {
+  margin: 0;
+  color: var(--ink-soft);
+  font-size: 15px;
+}
 .calc-grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -362,9 +372,9 @@ section { padding: 72px 0; }
 }
 .calculator-results > div:first-child strong {
   display: block;
-  font-size: clamp(32px, 4vw, 48px);
-  letter-spacing: -0.02em;
-  line-height: 1;
+  font-size: clamp(25px, 3vw, 36px);
+  letter-spacing: 0;
+  line-height: 1.08;
 }
 .calculator-results small {
   display: block;

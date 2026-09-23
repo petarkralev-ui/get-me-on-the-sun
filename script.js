@@ -27,7 +27,15 @@ document.addEventListener('DOMContentLoaded', function () {
         if (title && data.headline) title.textContent = data.headline;
         if (copy && data.summary) copy.textContent = data.summary;
         if (pill && data.statusLabel) pill.textContent = data.statusLabel;
-        if (date && data.lastChecked) date.textContent = 'Last checked: ' + data.lastChecked;
+        if (date && data.lastChecked) {
+          var checkedLabel = window.SiteI18n ? window.SiteI18n.label('checked') : 'Last checked';
+          var checkedDate = new Date(data.lastChecked + 'T12:00:00Z');
+          var locale = window.SiteI18n ? window.SiteI18n.currentLanguage() : 'en';
+          var formattedDate = Number.isNaN(checkedDate.getTime())
+            ? data.lastChecked
+            : new Intl.DateTimeFormat(locale, { day: 'numeric', month: 'long', year: 'numeric' }).format(checkedDate);
+          date.textContent = checkedLabel + ': ' + formattedDate;
+        }
 
         if (linkWrap && Array.isArray(data.sources)) {
           linkWrap.innerHTML = '';
@@ -41,10 +49,12 @@ document.addEventListener('DOMContentLoaded', function () {
             linkWrap.appendChild(a);
           });
         }
+
+        if (window.SiteI18n) window.SiteI18n.applyTo(rentalStatus);
       })
       .catch(function () {
         var pill = rentalStatus.querySelector('[data-rental-status-pill]');
-        if (pill) pill.textContent = 'Manual review needed';
+        if (pill) pill.textContent = window.SiteI18n ? window.SiteI18n.label('review') : 'Manual review needed';
       });
   }
 

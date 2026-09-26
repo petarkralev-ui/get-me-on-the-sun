@@ -51,7 +51,7 @@ img { max-width: 100%; display: block; }
   border-bottom: 1px solid var(--line);
 }
 .nav-inner {
-  max-width: var(--max);
+  max-width: 1360px;
   margin: 0 auto;
   padding: 0 32px;
   height: 56px;
@@ -68,6 +68,8 @@ img { max-width: 100%; display: block; }
   gap: 8px;
   margin-right: auto;
   order: 1;
+  flex: none;
+  white-space: nowrap;
 }
 .nav-brand .dot {
   width: 8px; height: 8px; border-radius: 50%;
@@ -76,8 +78,8 @@ img { max-width: 100%; display: block; }
 }
 .nav-links {
   display: flex;
-  gap: 22px;
-  font-size: 13px;
+  gap: 14px;
+  font-size: 12px;
   font-weight: 500;
   color: var(--ink-soft);
   order: 2;
@@ -85,7 +87,7 @@ img { max-width: 100%; display: block; }
 .nav-links a { padding: 6px 0; border-bottom: 2px solid transparent; transition: color .15s, border-color .15s; }
 .nav-links a:hover, .nav-links a.active { color: var(--ink); border-color: var(--sun); }
 .nav-toggle { display: none; background: none; border: 0; font-size: 20px; cursor: pointer; order: 4; }
-.language-switcher { position: relative; margin-left: 28px; order: 3; }
+.language-switcher { position: relative; margin-left: 20px; order: 3; }
 .language-button {
   min-width: 66px;
   height: 34px;

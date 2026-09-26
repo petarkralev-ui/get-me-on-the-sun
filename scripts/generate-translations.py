@@ -20,6 +20,8 @@ SHORT_CODE = re.compile(r"^[A-Z0-9&.\- ]{1,12}$")
 # machine translation would be unclear or could change the intended meaning.
 OVERRIDES = {
     "es": {
+        "Move Your Company to the Canary Islands": "Traslade su empresa a las Islas Canarias",
+        "Move Your Company to the Canary Islands →": "Traslade su empresa a las Islas Canarias →",
         "Move Your Company to the Canary Islands — Get Me On The Sun": "Traslade su empresa a Canarias — Get Me On The Sun",
         "Canary Islands Property Taxes — Get Me On The Sun": "Impuestos inmobiliarios en Canarias — Get Me On The Sun",
         "Move your company": "Traslade su empresa",
@@ -53,6 +55,8 @@ OVERRIDES = {
         "No automatic stacking": "Los incentivos no se acumulan automáticamente",
     },
     "ru": {
+        "Move Your Company to the Canary Islands": "Перенесите свой бизнес на Канарские острова",
+        "Move Your Company to the Canary Islands →": "Перенесите свой бизнес на Канарские острова →",
         "Move Your Company to the Canary Islands — Get Me On The Sun": "Перенесите свой бизнес на Канарские острова — Get Me On The Sun",
         "Canary Islands Property Taxes — Get Me On The Sun": "Налоги на недвижимость на Канарских островах — Get Me On The Sun",
         "Move your company": "Перенесите свой бизнес",
@@ -90,6 +94,8 @@ OVERRIDES = {
         "Joined-up admin for wider plans": "Согласованное административное сопровождение более широких проектов",
     },
     "bg": {
+        "Move Your Company to the Canary Islands": "Преместете бизнеса си на Канарските острови",
+        "Move Your Company to the Canary Islands →": "Преместете бизнеса си на Канарските острови →",
         "Move Your Company to the Canary Islands — Get Me On The Sun": "Преместете бизнеса си на Канарските острови — Get Me On The Sun",
         "Canary Islands Property Taxes — Get Me On The Sun": "Данъци върху имотите на Канарските острови — Get Me On The Sun",
         "Move your company": "Преместете бизнеса си",

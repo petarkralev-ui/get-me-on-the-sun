@@ -76,7 +76,7 @@ img { max-width: 100%; display: block; }
 }
 .nav-links {
   display: flex;
-  gap: 28px;
+  gap: 22px;
   font-size: 13px;
   font-weight: 500;
   color: var(--ink-soft);
@@ -136,7 +136,7 @@ img { max-width: 100%; display: block; }
 }
 .language-option:hover, .language-option.active { background: var(--sun-pale); }
 
-@media (max-width: 780px) {
+@media (max-width: 1040px) {
   .nav-links {
     position: fixed; top: 56px; left: 0; right: 0;
     background: var(--white);

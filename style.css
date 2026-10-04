@@ -603,3 +603,199 @@ footer .brand { font-weight: 700; color: var(--ink); }
 .pagenav .dir { font-size: 11px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: var(--ink-soft); }
 .pagenav .title { font-size: 15px; font-weight: 700; margin-top: 4px; }
 .pagenav .next { text-align: right; }
+
+/* ---------- Sun Guide website assistant ---------- */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+.sun-guide {
+  position: fixed;
+  right: 24px;
+  bottom: 24px;
+  z-index: 120;
+  font-family: var(--font);
+}
+.sun-guide-launcher {
+  min-height: 48px;
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  float: right;
+  padding: 8px 16px 8px 9px;
+  border: 0;
+  border-radius: 8px;
+  background: var(--ocean);
+  color: var(--white);
+  box-shadow: 0 10px 28px rgba(7,37,48,0.26);
+  font: inherit;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+}
+.sun-guide-launcher:hover { background: var(--ocean-deep); }
+.sun-guide-launcher:focus-visible,
+.sun-guide-close:focus-visible,
+.sun-guide-form input:focus-visible,
+.sun-guide-form button:focus-visible,
+.sun-guide-prompts button:focus-visible {
+  outline: 3px solid var(--sun-soft);
+  outline-offset: 2px;
+}
+.sun-guide-launcher-icon {
+  width: 30px;
+  height: 30px;
+  display: grid;
+  place-items: center;
+  border-radius: 6px;
+  background: var(--sun);
+  color: var(--ocean-deep);
+  font-size: 16px;
+  font-weight: 900;
+}
+.sun-guide.open .sun-guide-launcher { display: none; }
+.sun-guide-panel {
+  width: min(390px, calc(100vw - 32px));
+  height: min(600px, calc(100vh - 48px));
+  padding: 0;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--white);
+  box-shadow: 0 20px 55px rgba(7,37,48,0.28);
+}
+.sun-guide-panel:not([hidden]) {
+  display: grid;
+  grid-template-rows: auto minmax(150px, 1fr) auto auto auto;
+}
+.sun-guide-header {
+  min-height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 12px 14px 12px 18px;
+  background: var(--ocean);
+  color: var(--white);
+}
+.sun-guide-header div { display: grid; gap: 1px; }
+.sun-guide-header strong { font-size: 16px; }
+.sun-guide-header span { color: rgba(255,255,255,0.7); font-size: 12px; }
+.sun-guide-close {
+  width: 36px;
+  height: 36px;
+  border: 0;
+  border-radius: 6px;
+  background: rgba(255,255,255,0.1);
+  color: var(--white);
+  font: inherit;
+  font-size: 25px;
+  line-height: 1;
+  cursor: pointer;
+}
+.sun-guide-messages {
+  overflow-y: auto;
+  padding: 18px;
+  background: #F8FAFA;
+}
+.sun-guide-message {
+  max-width: 88%;
+  margin: 0 0 12px;
+  padding: 11px 13px;
+  border-radius: 8px;
+  font-size: 13.5px;
+  line-height: 1.48;
+}
+.sun-guide-message p { margin: 0; }
+.sun-guide-message.assistant {
+  border: 1px solid var(--line);
+  background: var(--white);
+  color: var(--ink);
+}
+.sun-guide-message.user {
+  margin-left: auto;
+  background: var(--ocean);
+  color: var(--white);
+}
+.sun-guide-message a {
+  display: inline-block;
+  margin-top: 8px;
+  color: var(--ocean);
+  font-weight: 800;
+  border-bottom: 1px solid rgba(11,58,74,0.28);
+}
+.sun-guide-prompts {
+  display: flex;
+  gap: 7px;
+  overflow-x: auto;
+  padding: 10px 14px;
+  border-top: 1px solid var(--line);
+  background: var(--white);
+  scrollbar-width: thin;
+}
+.sun-guide-prompts button {
+  flex: none;
+  max-width: 210px;
+  padding: 8px 10px;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  background: var(--sun-pale);
+  color: var(--ink);
+  font: inherit;
+  font-size: 12px;
+  font-weight: 700;
+  text-align: left;
+  cursor: pointer;
+}
+.sun-guide-form {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 8px;
+  padding: 12px 14px 8px;
+  background: var(--white);
+}
+.sun-guide-form input {
+  min-width: 0;
+  min-height: 42px;
+  padding: 9px 11px;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  color: var(--ink);
+  font: inherit;
+  font-size: 13px;
+}
+.sun-guide-form button {
+  min-height: 42px;
+  padding: 8px 14px;
+  border: 0;
+  border-radius: 6px;
+  background: var(--sun);
+  color: var(--ocean-deep);
+  font: inherit;
+  font-size: 13px;
+  font-weight: 800;
+  cursor: pointer;
+}
+.sun-guide-note {
+  margin: 0;
+  padding: 0 14px 12px;
+  background: var(--white);
+  color: var(--ink-soft);
+  font-size: 10.5px;
+  line-height: 1.35;
+}
+@media (max-width: 600px) {
+  .sun-guide { right: 16px; bottom: 16px; }
+  .sun-guide-panel {
+    width: calc(100vw - 32px);
+    height: min(620px, calc(100vh - 32px));
+  }
+  .sun-guide-launcher { min-height: 46px; }
+}

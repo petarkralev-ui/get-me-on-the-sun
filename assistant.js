@@ -45,6 +45,16 @@
   };
 
   var answers = {
+    contact: {
+      page: 'contact.html',
+      words: ['contact', 'email', 'enquiry', 'message', 'contacto', 'correo', 'consulta', 'связ', 'почт', 'контакт', 'имейл', 'запитване'],
+      text: {
+        en: 'You can contact the team through the website form or email hello@getmeonthesun.com directly. Include the service you need, your approximate timing, and any important details so your enquiry can reach the right person.',
+        es: 'Puede contactar con el equipo mediante el formulario del sitio web o escribir directamente a hello@getmeonthesun.com. Indique el servicio que necesita, el plazo aproximado y cualquier detalle importante para que su consulta llegue a la persona adecuada.',
+        ru: 'Вы можете связаться с командой через форму на сайте или написать напрямую на hello@getmeonthesun.com. Укажите нужную услугу, примерные сроки и важные детали, чтобы запрос попал к подходящему специалисту.',
+        bg: 'Можете да се свържете с екипа чрез формуляра в уебсайта или директно на hello@getmeonthesun.com. Посочете нужната услуга, приблизителния срок и важните подробности, за да насочим запитването към правилния човек.'
+      }
+    },
     service: {
       page: 'index.html',
       words: ['service', 'help', 'handle', 'all in one', 'servicio', 'ayuda', 'услуги', 'помощ', 'услуга'],

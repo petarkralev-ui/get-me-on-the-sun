@@ -58,4 +58,35 @@ document.addEventListener('DOMContentLoaded', function () {
       });
   }
 
+  var contactForm = document.querySelector('[data-contact-form]');
+  if (contactForm) {
+    contactForm.addEventListener('submit', function (event) {
+      event.preventDefault();
+      if (!contactForm.reportValidity()) return;
+
+      var data = new FormData(contactForm);
+      var subject = '[Get Me On The Sun] ' + data.get('subject');
+      var lines = [
+        'Name: ' + data.get('name'),
+        'Email: ' + data.get('email'),
+        'Telephone: ' + (data.get('phone') || 'Not provided'),
+        'Preferred language: ' + data.get('language'),
+        '',
+        'Enquiry:',
+        data.get('message')
+      ];
+      var mailto = 'mailto:hello@getmeonthesun.com?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(lines.join('\n'));
+      var status = contactForm.querySelector('[data-contact-status]');
+      var statusMessages = {
+        en: 'Your email application should now open. Please review the message and press Send.',
+        es: 'Su aplicación de correo debería abrirse ahora. Revise el mensaje y pulse Enviar.',
+        ru: 'Сейчас должно открыться ваше почтовое приложение. Проверьте сообщение и нажмите «Отправить».',
+        bg: 'Вашето приложение за имейл трябва да се отвори. Прегледайте съобщението и натиснете „Изпращане“.'
+      };
+      var currentLanguage = window.SiteI18n ? window.SiteI18n.currentLanguage() : 'en';
+      if (status) status.textContent = statusMessages[currentLanguage] || statusMessages.en;
+      window.location.href = mailto;
+    });
+  }
+
 });
